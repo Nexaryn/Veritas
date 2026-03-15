@@ -4,19 +4,19 @@ This module implements various ML algorithms and provides training/prediction fu
 """
 
 import numpy as np
-import pandas as pd
+# import pandas as pd  
 from typing import Dict, Tuple, Optional, Any
 import joblib
 import os
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
-import matplotlib.pyplot as plt
-import seaborn as sns
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+
 from src.data_processing import prepare_data, DataLoader, FeatureExtractor
 import config
-
 
 class FakeNewsClassifier:
     """Main classifier for fake news detection."""
@@ -193,15 +193,15 @@ class FakeNewsClassifier:
         y_pred = self.predict(X_test)
         cm = confusion_matrix(y_test, y_pred)
         
-        plt.figure(figsize=(8, 6))
-        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
-                   xticklabels=['Real News', 'Fake News'],
-                   yticklabels=['Real News', 'Fake News'])
-        plt.title(f'Confusion Matrix - {self.model_name.title()}')
-        plt.ylabel('True Label')
-        plt.xlabel('Predicted Label')
-        plt.tight_layout()
-        plt.show()
+        # plt.figure(figsize=(8, 6))
+        # sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+        #            xticklabels=['Real News', 'Fake News'],
+        #            yticklabels=['Real News', 'Fake News'])
+        # plt.title(f'Confusion Matrix - {self.model_name.title()}')
+        # plt.ylabel('True Label')
+        # plt.xlabel('Predicted Label')
+        # plt.tight_layout()
+        # plt.show()
     
     def save_model(self, model_path: str, vectorizer_path: str) -> None:
         """

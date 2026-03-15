@@ -46,5 +46,3 @@ flask
 joblib
 numpy
 scikit-learn
-pandas
-matplotlib
