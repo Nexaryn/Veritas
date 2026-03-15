@@ -18,8 +18,7 @@ import joblib
 import numpy as np
 from src.data_processing import TextPreprocessor
 import config
-
-# Try to import FactChecker (optional - requires spacy)
+import joblib
 try:
     from src.fact_checker import FactChecker
     FACT_CHECKER_AVAILABLE = True
@@ -462,3 +461,5 @@ if __name__ == '__main__':
     # Run the app
     port = int(os.environ.get('PORT', 5001))
     app.run(host='0.0.0.0', port=port, debug=True)
+
+joblib.dump(model, 'models/random_forest_model.joblib', compress=3)

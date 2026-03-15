@@ -17,22 +17,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     
     <style>
-    :root {
-        --primary: #3B82F6;       /* Blue */
-        --primary-dark: #2563EB;
-        --secondary: #22D3EE;     /* Cyan Accent */
-        --success: #22C55E;       /* Green */
-        --danger: #EF4444;        /* Red */
-        --warning: #f59e0b;
-        --dark: #0F172A;          /* Dark Slate BG */
-        --dark-2: #1E293B;        /* Dark Gray Cards */
-        --dark-3: #334155;
-        --gray: #9ca3af;
-        --gray-light: #E5E7EB;    /* Light Gray Text */
-        --white: #ffffff;
-        --glass: rgba(30, 41, 59, 0.7); /* Adjusted for new card color */
-        --glass-border: rgba(255, 255, 255, 0.1);
-    }
+:root {
+    --primary: #C0392B;
+    --primary-dark: #A93226;
+    --secondary: #E74C3C;
+    --dark: #111111;
+    --dark-2: #1D1D1D;
+    --dark-3: #2A2A2A;
+    --gray: #888888;
+    --gray-light: #BBBBBB;
+    --white: #F2F2F2;
+    --glass: rgba(29, 29, 29, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.07);
+}
         * {
             margin: 0;
             padding: 0;
@@ -41,16 +38,12 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-                linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #1e293b 50%, #1e1b4b 75%, #0f172a 100%);
+            background: #111111; 
             color: var(--white);
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
+            transition: 0.3s ease, color 0.3s ease;
         }
 
         /* Noise texture overlay */
@@ -67,20 +60,21 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        body.light-theme {
-            background: #F8F9FA !important; /* Off-white BG */
-    color: #1F2933;                /* Dark Gray Text */
-    --dark: #F8F9FA;
-    --dark-2: #FFFFFF;             /* White Cards */
-    --dark-3: #e2e8f0;
-    --primary: #1F3A5F;            /* Deep Blue */
-    --secondary: #3B82F6;          /* Soft Blue */
-    --success: #16A34A;            /* Green */
-    --danger: #DC2626;             /* Muted Red */
-    --warning: #F59E0B;            /* Orange */
+body.light-theme {
+    --dark: #FAF7F2;
+    --dark-2: #FFFFFF;
+    --dark-3: #E0D9D0;
+    --primary: #B22222;
+    --primary-dark: #8B1A1A;
+    --secondary: #CC3333;
+    --success: #2D6A4F;
+    --danger: #B22222;
+    --warning: #B7621B;
+    --gray: #766B5E;
+    --gray-light: #4A4035;
     --glass: rgba(255, 255, 255, 0.9);
-    --glass-border: rgba(31, 41, 51, 0.1);
-    --gray-light: #4b5563;
+    --glass-border: rgba(0, 0, 0, 0.08);
+}
             /* background: 
                 radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
@@ -93,7 +87,7 @@
             --glass: rgba(255, 255, 255, 0.8);
             --glass-border: rgba(148, 163, 184, 0.3);
             --gray-light: #475569; */
-        }
+        
 
         body.light-theme::before {
             opacity: 0.02;
@@ -791,7 +785,7 @@
     .analyze-btn {
          width: 100%;
          padding: 18px;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        background: var(--primary);
         border: none;
         border-radius: 12px;
         color: white; /* Force white text for better contrast on blue */
@@ -820,7 +814,7 @@
 
         .analyze-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 12px rgba(192, 57, 43, 0.4);
         }
 
         .analyze-btn:disabled {
