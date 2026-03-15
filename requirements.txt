@@ -41,8 +41,9 @@
 # jupyter>=1.0,<2.0
 
 # pydantic>=2.5,<2.7
-
 flask
+gunicorn
 joblib
 numpy
 scikit-learn
+nltk
