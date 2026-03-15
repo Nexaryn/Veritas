@@ -43,7 +43,7 @@
 # pydantic>=2.5,<2.7
 
 flask
-pandas
 joblib
 numpy
 scikit-learn
+pandas

@@ -16,6 +16,7 @@ import os
 import re
 import joblib
 import numpy as np
+from src import model
 from src.data_processing import TextPreprocessor
 import config
 import joblib
