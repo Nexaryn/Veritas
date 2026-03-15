@@ -12,7 +12,7 @@ Date: November 2025
 """
 
 import re
-import pandas as pd
+# import pandas as pd
 import numpy as np
 from typing import List, Tuple, Union, Optional
 from collections import Counter
@@ -457,25 +457,25 @@ class TextProcessor(BaseEstimator, TransformerMixin):
         return len(self.vectorizer.vocabulary_)
 
 
-def analyze_text_statistics(texts: List[str]) -> dict:
-    """
-    Analyze basic text statistics
+# def analyze_text_statistics(texts: List[str]) -> dict:
+#     """
+#     Analyze basic text statistics
     
-    Args:
-        texts (list): List of texts
+#     Args:
+#         texts (list): List of texts
         
-    Returns:
-        dict: Text statistics
-    """
-    stats = {
-        'num_texts': len(texts),
-        'avg_length': np.mean([len(text) for text in texts]),
-        'avg_words': np.mean([len(text.split()) for text in texts]),
-        'min_length': min([len(text) for text in texts]),
-        'max_length': max([len(text) for text in texts]),
-    }
+#     Returns:
+#         dict: Text statistics
+#     """
+#     stats = {
+#         'num_texts': len(texts),
+#         'avg_length': np.mean([len(text) for text in texts]),
+#         'avg_words': np.mean([len(text.split()) for text in texts]),
+#         'min_length': min([len(text) for text in texts]),
+#         'max_length': max([len(text) for text in texts]),
+#     }
     
-    return stats
+#     return stats
 
 
 def get_most_common_words(texts: List[str], n: int = 20, preprocessed: bool = False) -> List[Tuple[str, int]]:
@@ -503,54 +503,54 @@ def get_most_common_words(texts: List[str], n: int = 20, preprocessed: bool = Fa
     return word_freq.most_common(n)
 
 
-def compare_vocabularies(texts1: List[str], texts2: List[str], 
-                        labels: Tuple[str, str] = ('Group 1', 'Group 2'),
-                        n: int = 20) -> dict:
-    """
-    Compare vocabularies between two text groups
+# def compare_vocabularies(texts1: List[str], texts2: List[str], 
+#                         labels: Tuple[str, str] = ('Group 1', 'Group 2'),
+#                         n: int = 20) -> dict:
+#     """
+#     Compare vocabularies between two text groups
     
-    Args:
-        texts1 (list): First group of texts
-        texts2 (list): Second group of texts
-        labels (tuple): Labels for the groups
-        n (int): Number of top words to analyze
+#     Args:
+#         texts1 (list): First group of texts
+#         texts2 (list): Second group of texts
+#         labels (tuple): Labels for the groups
+#         n (int): Number of top words to analyze
         
-    Returns:
-        dict: Comparison results
-    """
-    processor = TextProcessor()
+#     Returns:
+#         dict: Comparison results
+#     """
+#     processor = TextProcessor()
     
-    # Preprocess texts
-    processed1 = [processor.preprocess_text(text) for text in texts1]
-    processed2 = [processor.preprocess_text(text) for text in texts2]
+#     # Preprocess texts
+#     processed1 = [processor.preprocess_text(text) for text in texts1]
+#     processed2 = [processor.preprocess_text(text) for text in texts2]
     
-    # Get word frequencies
-    words1 = Counter(' '.join(processed1).split())
-    words2 = Counter(' '.join(processed2).split())
+#     # Get word frequencies
+#     words1 = Counter(' '.join(processed1).split())
+#     words2 = Counter(' '.join(processed2).split())
     
-    # Get top words for each group
-    top_words1 = words1.most_common(n)
-    top_words2 = words2.most_common(n)
+#     # Get top words for each group
+#     top_words1 = words1.most_common(n)
+#     top_words2 = words2.most_common(n)
     
-    # Find unique words
-    vocab1 = set(words1.keys())
-    vocab2 = set(words2.keys())
+#     # Find unique words
+#     vocab1 = set(words1.keys())
+#     vocab2 = set(words2.keys())
     
-    unique_to_1 = vocab1 - vocab2
-    unique_to_2 = vocab2 - vocab1
-    common_words = vocab1 & vocab2
+#     unique_to_1 = vocab1 - vocab2
+#     unique_to_2 = vocab2 - vocab1
+#     common_words = vocab1 & vocab2
     
-    return {
-        'group1_label': labels[0],
-        'group2_label': labels[1],
-        'top_words_group1': top_words1,
-        'top_words_group2': top_words2,
-        'unique_to_group1': list(unique_to_1)[:20],
-        'unique_to_group2': list(unique_to_2)[:20],
-        'common_words_count': len(common_words),
-        'group1_vocab_size': len(vocab1),
-        'group2_vocab_size': len(vocab2)
-    }
+#     return {
+#         'group1_label': labels[0],
+#         'group2_label': labels[1],
+#         'top_words_group1': top_words1,
+#         'top_words_group2': top_words2,
+#         'unique_to_group1': list(unique_to_1)[:20],
+#         'unique_to_group2': list(unique_to_2)[:20],
+#         'common_words_count': len(common_words),
+#         'group1_vocab_size': len(vocab1),
+#         'group2_vocab_size': len(vocab2)
+#     }
 
 
 # Example usage and testing
