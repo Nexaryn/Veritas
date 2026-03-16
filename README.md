@@ -63,7 +63,7 @@ fake-news-detection/
 ### Step 1: Clone the Repository
 ```bash
 git clone https://github.com/Nexaryn/Veritas
-cd fake_news_detection
+cd Veritas
 ```
 
 ### Step 2: Create Virtual Environment (Recommended)
