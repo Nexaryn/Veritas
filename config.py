@@ -36,7 +36,7 @@ RANDOM_STATE = 42
 TEST_SIZE = 0.2
 
 # Streamlit app settings
-APP_TITLE = "Fake News Detection"
+APP_TITLE = "Veritas"
 APP_ICON = "🔍"
 SIDEBAR_TITLE = "Settings"
 

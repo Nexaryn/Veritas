@@ -1,3 +1,3 @@
 """
-Test suite for the fake news detection application.
+Test suite for the Veritas application.
 """

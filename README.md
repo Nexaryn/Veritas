@@ -62,8 +62,8 @@ fake-news-detection/
 
 ### Step 1: Clone the Repository
 ```bash
-git clone 
-cd virtus
+git clone https://github.com/Nexaryn/Veritas
+cd fake_news_detection
 ```
 
 ### Step 2: Create Virtual Environment (Recommended)
@@ -131,7 +131,7 @@ For enhanced fact-checking from professional sources like Snopes and PolitiFact:
 ```bash
 python app.py
 ```
-Then open your browser and navigate to: `http://localhost:5000`
+Then open your browser and navigate to: `http://localhost:5001`
 
 ### Training Models
 To train new models with custom dataset:
@@ -258,37 +258,21 @@ Raw Text → Lowercasing → Tokenization → Stop Word Removal → Stemming →
 ## 📸 Screenshots
 
 <details>
-<summary><b>🖼️ Click to View Screenshots (7 images)</b></summary>
+<summary><b>🖼️ Click to View Screenshots </b></summary>
 
 <br>
 
-### Home Page - Light Theme
-![Home Page Light](screenshots/home-light.png)
-*Clean and intuitive interface for news analysis*
-
 ### Home Page - Dark Theme
-![Home Page Dark](screenshots/home-dark.png)
+![Home Page Dark](screenshots/home-page-dark.png)
 *Modern dark theme for comfortable viewing*
 
-### Results Page - Example 1 (Light Theme)
-![Result Page 1 Light](screenshots/result-one-light.png)
-*Detailed prediction with confidence scores and probability distributions*
-
-### Results Page - Example 2 (Light Theme)
-![Result Page 2 Light](screenshots/result-two-light.png)
-*Ensemble model predictions with individual model breakdowns*
-
 ### Results Page - Example 1 (Dark Theme)
-![Result Page 1 Dark](screenshots/result-one-dark.png)
-*Fake news detection with ensemble voting in dark mode*
+![Result Page 1 Dark](screenshots/result-fake-dark.png)
+*Fake news detection in dark mode*
 
 ### Results Page - Example 2 (Dark Theme)
-![Result Page 2 Dark](screenshots/result-two-dark.png)
+![Result Page 2 Dark](screenshots/result-real-dark.png)
 *Real news verification with confidence analysis in dark mode*
-
-### Results Page - Example 3 (Dark Theme)
-![Result Page 3 Dark](screenshots/result-three-dark.png)
-*Analysis results with fact-checker warnings and insights*
 
 </details>
 
@@ -368,8 +352,9 @@ This project demonstrates understanding of:
 
 ## 👨‍💻 Author
 
-**Siddhesh**
-- Project: [Fake News Detection](https://github.com/Nexaryn/Veritas)
+**Siddhesh Khiratkar**
+- GitHub: [@Nexaryn](https://github.com/Nexaryn)
+- Project: [Veritas](https://github.com/Nexaryn/Veritas)
 
 ## 📄 License
 
@@ -392,4 +377,4 @@ If you have questions or suggestions:
 
 ---
 
-**Made with ❤️ and Python**
+Built with 🧠 and Python

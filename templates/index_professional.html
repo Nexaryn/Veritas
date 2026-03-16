@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake News Detector - AI-Powered Truth Analysis</title>
+    <title>Veritas- AI-Powered Fake News Detector</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,17 +18,20 @@
     
     <style>
 :root {
-    --primary: #C0392B;
-    --primary-dark: #A93226;
-    --secondary: #E74C3C;
-    --dark: #111111;
-    --dark-2: #1D1D1D;
-    --dark-3: #2A2A2A;
-    --gray: #888888;
-    --gray-light: #BBBBBB;
-    --white: #F2F2F2;
-    --glass: rgba(29, 29, 29, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.07);
+    --primary: #C8FF00;
+    --primary-dark: #9AC400;
+    --secondary: #A8E000;
+    --success: #39D353;
+    --danger: #FF4444;
+    --warning: #F0A500;
+    --dark: #080D0A;
+    --dark-2: #0B1210;
+    --dark-3: #1A2D1E;
+    --gray: #4A6B4E;
+    --gray-light: #8DB891;
+    --white: #E8FFE8;
+    --glass: rgba(11, 18, 16, 0.85);
+    --glass-border: rgba(200, 255, 0, 0.08);
 }
         * {
             margin: 0;
@@ -59,21 +62,21 @@
             pointer-events: none;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
-
 body.light-theme {
-    --dark: #FAF7F2;
-    --dark-2: #FFFFFF;
-    --dark-3: #E0D9D0;
-    --primary: #B22222;
-    --primary-dark: #8B1A1A;
-    --secondary: #CC3333;
-    --success: #2D6A4F;
+    --primary: #2D6A4F;
+    --primary-dark: #1B4332;
+    --secondary: #40916C;
+    --success: #1B4332;
     --danger: #B22222;
     --warning: #B7621B;
-    --gray: #766B5E;
-    --gray-light: #4A4035;
-    --glass: rgba(255, 255, 255, 0.9);
-    --glass-border: rgba(0, 0, 0, 0.08);
+    --dark: #F4F7F0;
+    --dark-2: #FFFFFF;
+    --dark-3: #D4DDD0;
+    --gray: #7A9B7E;
+    --gray-light: #4A6B4E;
+    --white: #1A2D1E;
+    --glass: rgba(255, 255, 255, 0.92);
+    --glass-border: rgba(45, 106, 79, 0.15);
 }
             /* background: 
                 radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
@@ -109,21 +112,21 @@ body.light-theme {
             padding: 0;
         }
 
-        .newspaper-img {
-        width: 100%;
-        height: 100%;
-        min-height: 250px;
-        object-fit: cover;
-        /* Dark mode filter: very dark to let text stay readable */
-        filter: grayscale(100%) contrast(0.8) brightness(0.15) blur(1px);
-        opacity: 0.12; 
-    }
+.newspaper-img {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    /* Adjusted for better dark mode visibility */
+    filter: grayscale(100%) contrast(1) brightness(0.25) blur(0.5px);
+    opacity: 0.25; 
+}
 
-    body.light-theme .newspaper-img {
-       /* Light mode filter: bright but faded */
-        filter: grayscale(100%) contrast(0.5) brightness(1.2) blur(1px);
-        opacity: 0.08;
-    }
+body.light-theme .newspaper-img {
+    /* Adjusted for better light mode visibility */
+    filter: grayscale(100%) contrast(0.8) brightness(1) blur(0.5px);
+    opacity: 0.18;
+}
 
         .container {
             max-width: 1400px;
@@ -782,19 +785,22 @@ body.light-theme {
         }
 
         /* Analyze Button */
-    .analyze-btn {
-         width: 100%;
-         padding: 18px;
-        background: var(--primary);
-        border: none;
-        border-radius: 12px;
-        color: white; /* Force white text for better contrast on blue */
-        font-size: 16px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: all 0.3s ease;
+.analyze-btn {
+    position: relative; /* Adds boundary for the shiny animation */
+    overflow: hidden;   /* Hides the white gradient when not hovering */
+    width: 100%;
+    padding: 18px;
+    background: var(--primary);
+    border: none;
+    border-radius: 12px;
+    color: white; 
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1px; /* Optional: keeps text aligned */
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
         .analyze-btn::before {
@@ -1517,8 +1523,8 @@ body.light-theme {
                     <i class="fas fa-shield-alt"></i>
                 </div>
                 <div class="logo-text">
-                    <h1>FAKE NEWS DETECTOR</h1>
-                    <p>AI-Powered Truth Analysis</p>
+                    <h1>Veritas</h1>
+                    <p>AI-Powered Fake News Detector</p>
                 </div>
             </div>
             <nav class="nav-links">
@@ -1935,7 +1941,7 @@ body.light-theme {
                 <!-- Bottom Bar -->
                 <div style="border-top: 1px solid var(--glass-border); padding-top: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
                     <p style="margin: 0; font-size: 13px; color: var(--gray-light);">
-                        © 2026 Fake News Detector. All Rights Reserved.
+                        © 2026 Veritas. All Rights Reserved.
                     </p>
                     <p style="margin: 0; font-size: 12px; color: var(--gray);">
                         Built with <i class="fas fa-code" style="color: var(--primary);"></i> Machine Learning & AI | Educational Use Only
@@ -2471,10 +2477,10 @@ body.light-theme {
                             }
                         },
                         tooltip: {
-                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            backgroundColor: 'rgba(8, 13, 10, 0.95)',
                             titleColor: '#ffffff',
                             bodyColor: '#94a3b8',
-                            borderColor: '#334155',
+                            borderColor: '#1A2D1E', 
                             borderWidth: 1,
                             padding: 12,
                             displayColors: true,
@@ -2524,18 +2530,19 @@ body.light-theme {
                 datasets: [{
                     label: 'Accuracy %',
                     data: [83.2, 90.0, 87.8, 89.7],
-                    backgroundColor: [
-                        'rgba(99, 102, 241, 0.8)',
-                        'rgba(139, 92, 246, 0.8)',
-                        'rgba(16, 185, 129, 0.8)',
-                        'rgba(245, 158, 11, 0.8)'
-                    ],
-                    borderColor: [
-                        'rgba(99, 102, 241, 1)',
-                        'rgba(139, 92, 246, 1)',
-                        'rgba(16, 185, 129, 1)',
-                        'rgba(245, 158, 11, 1)'
-                    ],
+// Demo chart colors — replace the 4 backgroundColor values:
+backgroundColor: [
+    'rgba(200, 255, 0, 0.8)',    // was indigo
+    'rgba(57, 211, 83, 0.8)',    // was violet
+    'rgba(0, 200, 150, 0.8)',    // was green (keep similar)
+    'rgba(240, 165, 0, 0.8)'     // was amber (keep)
+],
+borderColor: [
+    'rgba(200, 255, 0, 1)',
+    'rgba(57, 211, 83, 1)',
+    'rgba(0, 200, 150, 1)',
+    'rgba(240, 165, 0, 1)'
+],
                     borderWidth: 2
                 }]
             },
@@ -2547,10 +2554,10 @@ body.light-theme {
                         display: false
                     },
                     tooltip: {
-                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                        backgroundColor: 'rgba(8, 13, 10, 0.95)',
                         titleColor: '#ffffff',
                         bodyColor: '#94a3b8',
-                        borderColor: '#334155',
+                        borderColor: '#1A2D1E', 
                         borderWidth: 1,
                         padding: 10,
                         callbacks: {
