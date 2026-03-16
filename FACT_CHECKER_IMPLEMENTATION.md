@@ -190,7 +190,7 @@ Detects:
 ```
 ✓ src/fact_checker.py - Enhanced with medical/scam detection
 ✓ app.py - Added color-coded verdict support
-✓ templates/index_professional.html - Color-coded UI
+✓ templates/index.html - Color-coded UI
 ```
 
 ### API Usage:
@@ -325,6 +325,6 @@ Override: YES - Fact checker overrides ML prediction
 If you need to:
 - Add more scam patterns → Edit `src/fact_checker.py` line 48-77
 - Adjust penalty weights → Edit `src/fact_checker.py` line 198-210
-- Change colors → Edit `templates/index_professional.html` CSS section
+- Change colors → Edit `templates/index.html` CSS section
 
 **You're all set! 🎉**

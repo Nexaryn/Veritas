@@ -147,7 +147,7 @@ model_loaded = load_all_models()
 @app.route('/')
 def home():
     """Render the professional UI as default home page"""
-    return render_template('index_professional.html',
+    return render_template('index.html',
                          model_loaded=len(models) > 0,
                          available_models=list(models.keys()),
                          sample_news=SAMPLE_NEWS)
