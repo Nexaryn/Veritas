@@ -86,6 +86,7 @@ pip install -r requirements.txt
 ```bash
 python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('wordnet'); nltk.download('omw-1.4')"
 python -m spacy download en_core_web_sm
+pip install beautifulsoup4 requests
 ```
 
 ### Step 5: (Optional) Configure Google Fact Check API
