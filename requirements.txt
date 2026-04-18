@@ -1,0 +1,42 @@
+# --------------------
+# Web Framework
+# --------------------
+Flask
+Werkzeug
+python-dotenv
+
+# --------------------
+# Machine Learning
+# --------------------
+scikit-learn
+joblib
+
+# --------------------
+# Data Processing
+# --------------------
+pandas
+numpy
+
+# --------------------
+# Natural Language Processing
+# --------------------
+nltk
+textblob
+spacy
+wikipedia-api
+requests
+
+# --------------------
+# Visualization (Optional)
+# --------------------
+matplotlib
+seaborn
+plotly
+wordcloud
+
+# --------------------
+# Development & Testing
+# --------------------
+pytest
+jupyter
+pydantic
